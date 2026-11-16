@@ -53,8 +53,10 @@ Sample temperature is not a predictor or an additional completeness requirement.
 The grid specifies which interval a row represents. Centered smoothing uses nearby
 intervals too, so per-variable source-support bounds are exported in `bin_audit.csv`.
 Within-bin instrument timing differences and undocumented clock offsets can remain.
-No timezone or clock correction is guessed. Missing positions are restored as NaN
-only for plotting so lines do not bridge outages.
+No timezone or clock correction is guessed. Rows with missing values are deleted,
+and processed time-series figures draw the retained bins back-to-back, so they show
+no gaps. Faint dotted lines mark the 13 places where deleted intervals were cut out.
+Nothing is interpolated.
 
 MATLAB moving-mean semantics are documented by
 [MathWorks](https://www.mathworks.com/help/matlab/ref/movmean.html).
