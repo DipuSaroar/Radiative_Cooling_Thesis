@@ -1,0 +1,25 @@
+# Daytime Radiative Cooling thesis - Python environment
+#
+# Setup (Windows):
+#   py -3 -m venv .venv314
+#   .venv314\Scripts\python.exe -m pip install -r requirements.txt
+#   .venv314\Scripts\python.exe -m ipykernel install --user --name dipu-thesis
+#
+# Note: the original .venv/ in this repo is not usable on any machine but the one it was
+# built on - its pyvenv.cfg points at C:\Users\sakha\...\Python312, which does not exist
+# here. Use .venv314 instead.
+#
+# Verified working on Python 3.14.7.
+
+numpy==2.5.3
+pandas==3.0.6
+scipy==1.18.1
+matplotlib==3.11.2
+scikit-learn==1.9.1
+
+# Notebook tooling
+jupyterlab==4.6.3
+notebook==7.6.2
+ipykernel==7.3.0
+nbformat==5.11.1
+nbconvert==7.17.1
