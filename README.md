@@ -81,7 +81,7 @@ Use Python 3.11 and the pinned dependencies in `requirements.txt`.
 Windows PowerShell:
 
 ```powershell
-git clone https://github.com/al-rafi-DSC/Dipu_Bhai_Thesis.git "Radiative Cooling"
+git clone https://github.com/al-rafi-DSC/Radiative_Cooling.git "Radiative Cooling"
 cd "Radiative Cooling"
 py -3.11 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install --upgrade pip
