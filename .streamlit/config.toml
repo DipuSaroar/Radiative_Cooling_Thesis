@@ -1,0 +1,11 @@
+[server]
+# Local only: the app is served on this computer (http://localhost:8501).
+address = "localhost"
+port = 8501
+maxUploadSize = 500
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+primaryColor = "#c83d4b"

@@ -11,6 +11,10 @@ coverage, and SHA256 hashes are recorded in `../data_manifest.json`.
 | `merged_meteo.csv` | 35,327 | 17 April–15 May 2026 | Original-timestamp weather export |
 | `merged_ir.csv` | 33,890 | 20 April–15 May 2026 | Original-timestamp sky-temperature export |
 
+`merged_raft.csv`, `merged_meteo.csv` and `merged_ir.csv` are rebuilt from `../raw_data/`
+by `../code/data_cleaning.ipynb`, which checks that its output is byte-identical to these files.
+`merged_dataset_104957.csv` comes from the original pipeline on the `old_work` branch.
+
 The period with complete model inputs is shorter than the full source coverage.
 The notebook reports the retained bins after alignment and missing-data exclusion.
 

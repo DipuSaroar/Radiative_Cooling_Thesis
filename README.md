@@ -40,7 +40,8 @@ scope changed. No model or window selection was based on these holdout results.
 
 | File | Purpose |
 |---|---|
-| [code/main.ipynb](code/main.ipynb) | Complete executed workflow and all figures |
+| [code/data_cleaning.ipynb](code/data_cleaning.ipynb) | Step 1: rebuilds the three merged instrument CSVs from `raw_data/` and verifies they are byte-identical |
+| [code/main.ipynb](code/main.ipynb) | Step 2: complete executed workflow and all figures |
 | [processed/final_processed_dataset.csv](processed/final_processed_dataset.csv) | Final Excel-readable model dataset |
 | [processed/README.md](processed/README.md) | Input and output columns, units and provenance |
 | [results/](results/) | Bin audit, split assignments, predictions, metrics, gaps and hashes |
@@ -54,6 +55,24 @@ scope changed. No model or window selection was based on these holdout results.
 The requested five-minute presentation is intentionally outside this submission's
 current scope. Earlier exploratory work is kept in `archive/` and in the development branches. Private
 audio is not redistributed.
+
+## Web app (runs locally)
+
+An interactive app for presenting the project lives in `app/`. Double-click **`run_app.bat`**
+(or run `.venv\Scripts\python.exe -m streamlit run app\streamlit_app.py`), then open
+http://localhost:8501. The first run creates `.venv` and installs `requirements.txt` and
+`app/requirements.txt`.
+
+| Page | What it shows |
+|---|---|
+| Overview | Project summary, pipeline diagram, headline results |
+| Data and graphs | Gap-free time series of all six variables, smoothing before/after, daily cycle, correlations, clean CSV download |
+| Model performance | Random Forest on the random 80/20 split and the chronological holdout, feature importance, errors, live prediction tool |
+| Upload new data | Upload raw RAFT/weather/IR files or a CSV; they are cleaned with the thesis pipeline, analysed on their own or added to the campaign |
+
+`app/pipeline.py` reuses the notebook logic and reproduces `processed/final_processed_dataset.csv`
+and `results/metrics.csv` exactly from `raw_data/`. Uploads stay in the browser session; no project
+file is changed.
 
 ## Reproduce
 
